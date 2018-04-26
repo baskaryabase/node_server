@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>GetFyt | SignIn</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- google fonts -->
+
+		<!-- Css link -->
+		<link rel="shortcut icon" href="images/Getfyticon.png">
+		<link rel="stylesheet" href="stylesheets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/css/style2.css">
+		<link rel="stylesheet" href="stylesheets/css/dualform.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+	</head>
+	<body id="top">
+
+
+        <header id="navigation" class="navbar-fixed-top animated-header">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- responsive nav button -->
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+                    </button>
+					<!-- /responsive nav button -->
+
+					<!-- logo -->
+					<h1 class="navbar-brand" style="margin-bottom:-20px;margin-top:-10px;">
+						<a href="#body"><img src="images/Getfyt.png" height="70" width="164" alt=""></a>
+					</h1>
+					<!-- /logo -->
+                </div>
+
+				<!-- main nav -->
+                <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                    <ul id="nav" class="nav navbar-nav menu">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="/howitworks">How It Works</a></li>
+                        <li><a href="/#contact">Contact</a></li>
+                        <li><a href="/userlogin">Login</a></li>
+                        <li><a href="/exploregyms">Explore GYM</a></li>
+                    </ul>
+                </nav>
+				<!-- /main nav -->
+
+            </div>
+        </header>
+
+    <section id="login-form">
+
+			<div class="form">
+
+	      <ul class="tab-group">
+	        <li class="tab active"><a href="#login-tab">Log In</a></li>
+	        <li class="tab"><a href="#signup-tab">Sign Up</a></li>
+	      </ul>
+				<div style="display:none" id="alert" class="alert alert-danger">
+        </div>
+      <div class="tab-content">
+
+        <div id="login-tab">
+          <h1>Welcome Back!</h1>
+
+
+          <!-- <form action="/" method="post"> -->
+
+            <div class="field-wrap">
+            <label>
+              Phone Number<span class="req">*</span>
+            </label>
+            <input id="number" type="phone"required autocomplete="off"/>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input id="password" type="password"required autocomplete="off"/>
+          </div>
+
+          <p class="forgot"><a href="#">Forgot Password?</a></p>
+
+          <button id="signin" onclick="signin()" type="button" class="button button-block">Log In</button>
+
+
+      <!-- </form> -->
+
+        </div>
+
+        <div id="signup-tab">
+          <h1>Sign Up for Free</h1>
+
+          <div class="field-wrap">
+            <label>
+              Your Name<span class="req">*</span>
+            </label>
+            <input id="name" type="name"required autocomplete="off"/>
+          </div>
+
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                Email<span class="req">*</span>
+              </label>
+              <input id="email" type="email" required autocomplete="off" />
+            </div>
+
+            <div class="field-wrap">
+              <label>
+                Phone Number<span class="req">*</span>
+              </label>
+              <input id="numbers" type="text"required autocomplete="off"/>
+            </div>
+          </div>
+
+					<div class="top-row">
+            <div class="field-wrap">
+              <label>
+                <span class="req"></span>
+              </label>
+							<select id="gender" required autocomplete="off">
+	              <option value="">Gender</option>
+	              <option value="male" style="color: #888;">Male</option>
+	              <option value="female" style="color: #888;">Female</option>
+	            </select>
+            </div>
+
+            <div class="field-wrap">
+							<label>
+	              Referel Code(optional)<span class="req">*</span>
+	            </label>
+	            <input id="refcode" type="text" autocomplete="off"/>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Set A Password<span class="req">*</span>
+            </label>
+            <input id="passwords" type="password"required autocomplete="off"/>
+          </div>
+
+					<div class="field-wrap">
+            <label>
+              Confirm Password<span class="req">*</span>
+            </label>
+            <input id="cpasswords" type="password"required autocomplete="off"/>
+          </div>
+
+          <button id="signup" onclick="signup()" type="submit" class="button button-block">Get Started</button>
+
+        </div>
+
+      </div><!-- tab-content -->
+		</div>
+
+    </section>
+
+
+
+		<footer>
+			<div class="container" style="margin-bottom:-60px;">
+				<div class="row" style="padding-bottom:20px;">
+					<div class="col-md-6">
+						<div class="block">
+							<a href="#">
+								<span> <img style="margin-bottom:-20px;" src="images/Getfyticon.png" height="80" width="80" alt=""> </span>
+							</a>
+							<p style="font-size:15px;">A unit of Getfyt Technologies Private Limited.</p>
+							<ul style="padding-top:15px;">
+								<li style="font-size:28px;">
+									<a href="#" style="color:#d63138"> <i class="fa fa-facebook-square" aria-hidden="true"></i> </a>
+									<a href="#" style="color:#d63138"> <i class="fa fa-twitter-square" aria-hidden="true"></i> </a>
+									<a href="#" style="color:#d63138"> <i class="fa fa-instagram" aria-hidden="true"></i> </a>
+									<a href="#" style="color:#d63138"> <i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="block">
+							<div class="container" style="padding-top:35px;">
+								<ul style="text-align:left;line-height:30px;">
+									<li>
+										<i style="color:#d63138;font-size:20px;" class="fa fa-paper-plane-o" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;
+									  <span style="color:#fff;"> No.15, Parthasarathy Gardens, Alwarpet, Chennai-600 018. </span>
+									 </li>
+									<li>
+										<i style="color:#d63138;font-size:20px;" class="fa fa-phone" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;
+										<span style="color:#fff;"> +91 98849 36017 </span>
+									</li>
+									<li>
+										<i style="color:#d63138;font-size:20px;" class="fa fa-envelope-o" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;
+										<span style="color:#fff;"> info@getfyt.co.in </span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div><hr style="margin-bottom:-5px;">
+				<div class="row" style="margin:-10px;">
+					<div class="col-md-5">
+						<p style="line-height:20px;color:#666">2017 All Rights Reserved © <span style="font-weight:500;color:#fff">Getfyt Technologies Private Limited.</span> </p>
+					</div>
+					<div class="col-md-7">
+					<nav class="navbar-right" role="navigation" style="padding-top:8px;">
+							<ul id="nav" class="nav navbar-nav ">
+								<li><a style="font-size:13px;color:#666;" href="/aboutus">ABOUT</a></li>
+								<li><a style="font-size:13px;color:#666;" href="/termsandconditions">TERMS & CONDITIONS</a></li>
+								<li><a style="font-size:13px;color:#666;" href="/privacypolicy">PRIVACY POLICY</a></li>
+								<li><a style="font-size:13px;color:#666;" href="/contact">CONTACT</a></li>
+							</ul>
+					</nav>
+					</div>
+				</div>
+
+			</div>
+		</footer>
+	</div>
+<script type="text/javascript">
+function validateEmail() {
+  var x = $("#email").val();
+  var atpos = x.indexOf("@");
+  var dotpos = x.lastIndexOf(".");
+  if (atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= x.length) {
+    return false;
+  } else {
+    return true;
+  }
+}
+function signup() {
+  if ($("#numbers").val().length != 10) {
+    document.getElementById("alert").style.display = "block";
+    document.getElementById("alert").innerHTML = "Enter a valid mobile number";
+    return false;
+  }
+  var name = $("#name").val(),
+    phone = $("#numbers").val(),
+    email = $("#email").val(),
+    gender = $("#gender").val(),
+    password = $("#passwords").val(),
+    cpassword = $("#cpasswords").val();
+  if (email == "" || name == "" || phone == "" || password == "") {
+    document.getElementById("alert").style.display = "block";
+    document.getElementById("alert").innerHTML = "Checkout All fields";
+  } else if (validateEmail() == false) {
+    document.getElementById("alert").style.display = "block";
+    document.getElementById("alert").innerHTML = "Enter a Valid Email Address";
+  } else {
+    if (password != cpassword) {
+      document.getElementById("alert").style.display = "block";
+      document.getElementById("alert").innerHTML = "Password Does Not Match";
+    } else {
+      document.getElementById("alert").style.display = "none";
+      document.getElementById("alert").innerHTML = "";
+      axios
+        .post(
+          "http://getfytserver-env.gundmvzb2r.ap-south-1.elasticbeanstalk.com/user/signup",
+          {
+            name: $("#name").val(),
+            phone: $("#numbers").val(),
+            email: $("#email").val(),
+            gender: $("#gender").val(),
+            password: $("#passwords").val(),
+            joined_through: "web"
+          }
+        )
+        .then(function(response) {
+          if (response.status == 200) {
+            console.log("Data: ", response.data.data);
+            window.localStorage.setItem("token", response.data.token);
+            window.location.replace("/");
+          } else {
+            document.getElementById("alert").style.display = "block";
+            document.getElementById("alert").innerHTML =
+              "invalid Username or password";
+          }
+        })
+        .catch(function(err) {
+          console.log(err);
+
+          document.getElementById("alert").style.display = "block";
+          document.getElementById("alert").innerHTML =
+            "phone number already in use";
+          // "Error Signing Up please Try again later";
+        });
+    }
+  }
+  return true;
+}
+
+function signin() {
+  var phone = $("#number").val();
+  var password = $("#password").val();
+  if (phone == "" || password == "") {
+    document.getElementById("alert").style.display = "none";
+    document.getElementById("alert").style.content = "Checkout all field";
+    return false;
+  }
+  axios
+    .post(
+      "http://getfytserver-env.gundmvzb2r.ap-south-1.elasticbeanstalk.com/user/login",
+      {
+        phone: $("#number").val(),
+        password: $("#password").val()
+      }
+    )
+    .then(function(data) {
+      if (data.status == 200) {
+        window.localStorage.setItem("token", data.data.token);
+        window.location.replace("/");
+      } else {
+        document.getElementById("alert").style.display = "block";
+        document.getElementById("alert").style.content =
+          "Invalid Username Or Password";
+      }
+    })
+    .catch(function(err) {
+      console.log("a");
+      document.getElementById("alert").style.display = "block";
+      document.getElementById("alert").innerHTML =
+        "Invalid Username Or Password";
+    });
+}
+</script>
+		<!-- load Js -->
+		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+		<script src="stylesheets/js/dualform.js"></script>
+	</body>
+</html>
